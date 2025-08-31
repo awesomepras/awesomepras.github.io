@@ -4,18 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
   <header>
     <h1>Child Page: {{ page.title }}</h1>
   </header>
 
-  <main>
-    {{ content }}
-  </main>
+  <div class="container">
+    <main>
+      {{ content }}
+    </main>
+  </div>
 
   <footer>
     <p>&copy; 2024 My Blog</p>
+    
   </footer>
 </body>
 </html>

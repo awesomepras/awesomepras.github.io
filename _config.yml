@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: awesomepras blog!
+title: Awesomepras blog!
 email: prasana@alienfrompondy.com 
 description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -71,3 +71,16 @@ minima:
     - { platform: twitter, user_url: "https://twitter.com/awesomepras" }
     - { platform: linkedin, user_url: "https://linkedin.com/in/prasanaraman/" }
     - { platform: mastodon, user_url: "https://mstdn.ca/deck/@awesomepras" }
+header_pages:
+  - index.markdown
+#   - _pages/sre.md
+#   - _pages/cicd.md
+#   - _pages/monitoring.md
+#   - _pages/security.md
+#   - _pages/cloudrun-functions.md
+#   - _pages/practice-questions.md
+
+collections:
+  pages:
+    output: true
+    permalink: /:path/

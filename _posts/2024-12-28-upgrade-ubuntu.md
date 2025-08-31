@@ -3,7 +3,6 @@ layout: default
 title: How To - Upgrade EOL ubuntu distro to latest version 
 ---
 
-
 # Intro
 How to upgrade ubuntu from an EOL distro without formatting disk
 

@@ -11,7 +11,7 @@ body {
   
   /* Header */
   header {
-    background-color: #8e9192; /* Light blue header */
+    background-color:  #222; /* #8e9192;  Light blue header */
     color: white;
     padding: 20px;
     text-align: center;
@@ -88,3 +88,41 @@ body {
     }
   }
   
+
+  /* assets/css/styles.css */
+.home {
+  display: flex;
+}
+
+.post-list {
+  flex: 3;
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+}
+
+.main-content {
+  flex: 3;
+}
+
+.sidebar {
+  flex: 1;
+  background: #f7f7f7;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar li {
+  margin-bottom: 0.5rem;
+}

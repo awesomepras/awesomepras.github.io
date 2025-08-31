@@ -1,7 +1,28 @@
 ---
-layout: default
+layout: home
 title: Home
 ---
-{% for post in site.posts %}
-  <h2>{{ post.title }}</h2>
-{% endfor %}
+
+<div class="container">
+  <div class="main-content">
+    <h1>Welcome to AwesomePras's Blog</h1>
+    <h2>Pages</h2>
+    <h2>Sample Questions for DevOps Exam</h2>
+    <ul>
+      <li><a href="{{ '/sre/' | relative_url }}">SRE Concepts</a></li>
+      <li><a href="{{ '/cicd/' | relative_url }}">CI/CD Practices</a></li>
+      <li><a href="{{ '/monitoring/' | relative_url }}">Monitoring and Logging</a></li>
+      <li><a href="{{ '/security/' | relative_url }}">Security Practices</a></li>
+      <li><a href="{{ '/cloudrun-functions/' | relative_url }}">Cloud Run & Functions</a></li>
+      <li><a href="{{ '/practice-questions/' | relative_url }}">Scenario Practice Questions</a></li>
+    </ul>
+  </div>
+  <aside class="sidebar">
+    <h2>Blog Posts</h2>
+    <ul>
+      {% for post in site.posts %}
+        <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </aside>
+</div>
