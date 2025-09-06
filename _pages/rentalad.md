@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: no-sidebar
 title: Bachelor Walkout Basement Apartment for Rent – Warden/Steeles
 date: 2025-09-02
 categories: [advertisement]
