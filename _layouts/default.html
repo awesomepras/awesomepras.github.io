@@ -1,47 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="/assets/css/styles.css">
-</head>
-<body>
-  <header>
-    <h1>
-      <a href="{{ '/' | relative_url }}" style="color: inherit; text-decoration: none;">
-      {{ site.title }}
-      </a>
-    </h1>
-  </header>
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 
-  <div class="container">
-    <div class="main-content">
+<head>
+{% include head.html %}
+{% include gtag.html %}
+</head>
+
+<body class="page" itemscope itemtype="http://schema.org/WebPage">
+
+<div class="page-wrapper">
+
+{% include chrome-frame.html %}
+{% include navigation.html %}
+
+{% if page.image.feature %}
+<div class="image-wrap">
+  <img src="{{ page.image.feature | relative_url }}" alt="{{ page.title }} feature image" itemprop="primaryImageOfPage">
+</div>
+{% endif %}
+
+<div id="main" role="main" itemprop="mainContentOfPage">
+  <div class="article-author-top">
+    {% include author-bio.html %}
+  </div>
+  <article itemscope itemtype="http://schema.org/CreativeWork">
+    {% if page.title and page.title != "" %}
+    <div class="headline-wrap">
+      <h1 itemprop="headline">{{ page.title }}</h1>
+    </div>
+    {% endif %}
+    <div class="article-wrap" itemprop="text">
       {{ content }}
     </div>
-    <aside class="sidebar">
-      <p><a href="{{ '/' | relative_url }}">Home</a></p
-      <p><a href="{{ '/about' | relative_url }}">About</a></p>
-      <h3>Sample Questions for Google Professional Devops Exam</h3>
-      <ul>
-        <li><a href="{{ '/sre/' | relative_url }}">SRE</a></li>
-        <li><a href="{{ '/cicd/' | relative_url }}">CI/CD</a></li>
-        <li><a href="{{ '/monitoring/' | relative_url }}">Monitoring</a></li>
-        <li><a href="{{ '/security/' | relative_url }}">Security</a></li>
-        <li><a href="{{ '/cloudrun-functions/' | relative_url }}">Cloud Run</a></li>
-        <li><a href="{{ '/practice-questions/' | relative_url }}">Practice Qs</a></li>
-      </ul>
-    </aside>
-  </div>
+  </article>
+</div>
 
+</div><!-- /.page-wrapper -->
+
+<div class="footer-wrap">
   <footer>
-    <p>&copy; 2024 My Blog</p>
-    <div class="social-links">
-    <a href="https://github.com/{{ site.github_username }}" target="_blank">GitHub</a> |
-    <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank">Twitter</a> |
-    <a href="https://linkedin.com/in/prasanaraman/" target="_blank">LinkedIn</a> |
-    <a href="https://mstdn.ca/deck/@awesomepras" target="_blank">Mastodon</a>
-  </div>
+    {% include footer.html %}
   </footer>
+</div>
+
+{% include scripts.html %}
 </body>
 </html>

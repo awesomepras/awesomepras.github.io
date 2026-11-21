@@ -1,7 +1,7 @@
 ---
 layout: page
-title: ""
 permalink: /security/
+title: "Security Practices"
 ---
 
 ---

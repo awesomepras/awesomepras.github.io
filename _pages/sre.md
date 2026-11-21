@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /sre/
-title: ""
+title: "SRE Concepts"
 ---
 ---
 # SRE Concepts for Google Cloud DevOps

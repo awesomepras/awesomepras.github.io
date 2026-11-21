@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: How To - Upgrade EOL ubuntu distro to latest version 
 ---
 

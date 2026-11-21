@@ -1,10 +1,8 @@
 ---
-layout: default
+layout: post
 title: Google Cloud Certified - Professional Cloud DevOps Engineer – Exam Prep
 ---
 ![Image description](/assets/images/pdevopse_cert.png)
-
-# Google Cloud Certified - Professional Cloud DevOps Engineer – Exam Prep
 
 ## Overview
 

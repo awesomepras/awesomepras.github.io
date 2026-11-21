@@ -1,13 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+
 <head>
-  <meta charset="UTF-8">
-  <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="/assets/css/styles.css">
+{% include head.html %}
+{% include gtag.html %}
 </head>
-<body>
-  <main>
-    {{ content }}
-  </main>
+
+<body class="page" itemscope itemtype="http://schema.org/WebPage">
+
+<div class="page-wrapper">
+
+{% include chrome-frame.html %}
+{% include navigation.html %}
+
+<div id="main" role="main" itemprop="mainContentOfPage" style="max-width: 960px; margin: 0 auto; padding: 0 1.5em; float: none;">
+  <article itemscope itemtype="http://schema.org/CreativeWork">
+    {% if page.title and page.title != "" %}
+    <div class="headline-wrap">
+      <h1 itemprop="headline">{{ page.title }}</h1>
+    </div>
+    {% endif %}
+    <div class="article-wrap" itemprop="text">
+      {{ content }}
+    </div>
+  </article>
+</div>
+
+</div><!-- /.page-wrapper -->
+
+<div class="footer-wrap">
+  <footer>
+    {% include footer.html %}
+  </footer>
+</div>
+
+{% include scripts.html %}
 </body>
 </html>
