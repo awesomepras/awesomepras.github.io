@@ -1,7 +1,7 @@
 ---
 layout: page
-title: ""
 permalink: /practice-questions/
+title: "Practice Questions"
 ---
 
 ---

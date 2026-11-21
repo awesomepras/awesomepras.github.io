@@ -1,7 +1,7 @@
 ---
 layout: page
-title: ""
 permalink: /cicd/
+title: "CI/CD Practices"
 ---
 ---
 

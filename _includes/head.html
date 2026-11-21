@@ -1,0 +1,57 @@
+{% assign page_title = page.title | strip %}
+<meta charset="utf-8">
+<title>{% if page_title and page_title != "" %}{{ page_title }} &#8211; {% endif %}{{ site.title }}</title>
+{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+{% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
+{% if site.owner.twitter %}
+<!-- Twitter Card and Open Graph meta -->
+<meta name="twitter:title" content="{% if page_title and page_title != "" %}{{ page_title }} &#8211; {% endif %}{{ site.title }}">
+<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ page.content | strip_html | strip_newlines | truncate: 120 }}{% endif %}">
+<meta name="twitter:creator" content="@{{ site.owner.twitter }}">
+{% if page.layout == 'photo' %}
+<meta name="twitter:card" content="photo">
+{% if page.image %}<meta name="twitter:image:src" content="{{ page.image.feature | relative_url }}">{% endif %}
+{% else %}
+<meta name="twitter:card" content="summary">
+{% if page.image.thumb %}<meta name="twitter:image:src" content="{{ page.image.thumb | relative_url }}">{% endif %}
+{% endif %}
+<meta property="og:type" content="article">
+{% if page.image.thumb %}<meta property="og:image" content="{{ page.image.thumb | relative_url }}">{% endif %}
+{% endif %}
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="{% if page_title and page_title != "" %}{{ page_title }} &#8211; {% endif %}{{ site.title }}">
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ page.content | strip_html | strip_newlines | truncate: 120 }}{% endif %}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:site_name" content="{{ site.title }}">
+
+{% if site.google_verify %}<!-- Webmaster Tools verification -->
+<meta name="google-site-verification" content="{{ site.google_verify }}">{% endif %}
+{% if site.bing_verify %}<meta name="msvalidate.01" content="{{ site.bing_verify }}">{% endif %}
+
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Webfonts & Typography -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lxgw-wenkai-webfont/1.7.0/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous" />
+
+<!-- Theme CSS -->
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" href="{{ '/assets/css/ie.css' | relative_url }}">
+<![endif]-->
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Modernizr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha512-3n19xznO0ubPpSwYCRRBgHh63DrV+bdZfHK52b1esvId4GsfwStQNPJFjeQos2h3JwCmZl0/LgLxSKMAI55hgw==" crossorigin="anonymous"></script>
+
+<!-- Favicons -->
+{% if site.owner.avatar %}
+<link rel="shortcut icon" href="{{ '/assets/images/' | append: site.owner.avatar | relative_url }}">
+{% endif %}

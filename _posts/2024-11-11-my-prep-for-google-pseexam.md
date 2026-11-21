@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: My Prep For Google Professional Cloud Security Engineer Exam
 ---
 ![Image description](/assets/images/pse_cert.png)

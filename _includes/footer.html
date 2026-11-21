@@ -1,35 +1,24 @@
-<footer class="site-footer h-card" style="text-align: center;">
-    <data class="u-url" href="{{ "/" | relative_url }}"></data>
-    {%- include social.html -%}
-    <!-- <div class="wrapper">
-    
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
-    
-    <div class="footer-col-wrapper">
-    <div class="footer-col footer-col-1">
-    <ul class="contact-list">
-    <li class="p-name">
-    {%- if site.author -%}
-    {{ site.author | escape }}
-    {%- else -%}
-    {{ site.title | escape }}
-    {%- endif -%}
-    </li>
-    <!-- {%- if site.email -%}
-    <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-    {%- endif -%}
-    </ul> 
-    </div>
-    
-    <div class="footer-col footer-col-2" align="left">
-    {%- include social.html -%}
-    </div>
-    
-    <div class="footer-col footer-col-3">
-    <p>{{- site.description | escape -}}</p>
-    </div>
-    </div>
-    
-    </div> -->
-    
-    </footer>
+<div class="footer-social-icons">
+  {% if site.owner.email %}
+    <a href="mailto:{{ site.owner.email }}" title="Email" target="_blank"><i class="icon-mail"></i></a>
+  {% endif %}
+  {% if site.owner.github %}
+    <a href="https://github.com/{{ site.owner.github }}" title="GitHub" target="_blank"><i class="icon-github"></i></a>
+  {% endif %}
+  {% if site.owner.twitter %}
+    <a href="https://twitter.com/{{ site.owner.twitter }}" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
+  {% endif %}
+  {% if site.owner.linkedin %}
+    <a href="https://linkedin.com/in/{{ site.owner.linkedin }}" title="LinkedIn" target="_blank"><i class="icon-linkedin"></i></a>
+  {% endif %}
+  {% if site.owner.mastodon %}
+    <a href="{{ site.owner.mastodon }}" title="Mastodon" target="_blank" rel="me"><svg style="width:18px;height:18px;vertical-align:-3px;fill:currentColor;" viewBox="0 0 24 24"><path d="M21.327 8.566c0-4.339-2.843-5.61-2.843-5.61C16.903 2.215 13.918 2 12.001 2c-1.921 0-4.906.215-6.488.956 0 0-2.843 1.271-2.843 5.61 0 .993-.019 2.18.049 3.466.225 4.314 1.764 8.528 7.037 8.922 2.456.184 4.56-.47 4.56-.47l-.095-1.704s-1.61.488-3.418.428c-1.782-.06-3.68-.403-3.905-2.527a4.9 4.9 0 0 1-.065-.795s1.82.44 4.12.545c1.405.064 2.766-.084 4.093-.242 3.125-.374 5.253-2.302 5.568-5.32.327-3.13.242-6.662.242-6.662zm-3.485 7.648H15.82V9.897c0-1.332-.56-2.008-1.68-2.008-1.237 0-1.856.8-1.856 2.392v3.473h-1.572V10.28c0-1.592-.619-2.392-1.856-2.392-1.12 0-1.68.676-1.68 2.008v6.317H5.158V9.664c0-1.332.34-2.386 1.018-3.162.698-.775 1.614-1.173 2.747-1.173 1.309 0 2.317.5 3.012 1.498l.565.92.565-.92c.695-.998 1.703-1.498 3.012-1.498 1.133 0 2.049.398 2.747 1.173.679.776 1.018 1.83 1.018 3.162v6.55z"/></svg></a>
+  {% endif %}
+  <a href="{{ '/feed.xml' | relative_url }}" title="Atom / RSS Feed" target="_blank"><i class="icon-feed"></i></a>
+</div>
+
+<h6>&copy; {{ site.time | date: '%Y' }} {{ site.owner.name | default: site.title }}.
+  Published with <a href="https://pages.github.com/" rel="nofollow">GitHub Pages</a>,
+  powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>,
+  based on the <a href="https://mademistakes.com/" rel="nofollow">Minimal Mistakes</a> theme.
+</h6>

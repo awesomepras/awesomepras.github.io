@@ -1,0 +1,84 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+
+<head>
+{% include head.html %}
+{% include gtag.html %}
+</head>
+
+<body class="home" itemscope itemtype="http://schema.org/WebPage">
+
+<div class="page-wrapper">
+
+{% include chrome-frame.html %}
+{% include navigation.html %}
+
+{% if page.image.feature %}
+<div class="image-wrap">
+  <div class="headline-wrap">
+    <h1>{{ page.title }}</h1>
+    {% if page.tagline %}<h2>{{ page.tagline }}</h2>{% endif %}
+  </div>
+  <img src="{{ page.image.feature | relative_url }}" alt="{{ page.title }} feature image">
+</div>
+{% endif %}
+
+<div id="main" role="main" itemprop="mainContentOfPage">
+  <div class="article-author-top">
+    {% include author-bio.html %}
+  </div>
+
+  <div id="index" itemscope itemtype="http://schema.org/Blog">
+    {% if content and content != "" %}
+      <div class="article-wrap" itemprop="text" style="margin-bottom: 2em;">
+        {{ content }}
+      </div>
+    {% endif %}
+
+    <div class="calendar-posts-wrap">
+      <h3>Articles & Exam Prep</h3>
+      {% for post in site.posts %}  
+        {% unless post.next %}
+          <h2 class="archive-year"><i class="icon-calendar"></i> {{ post.date | date: '%Y' }}</h2>
+          <hr />
+        {% else %}
+          {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+          {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+          {% if year != nyear %}
+            <h2 class="archive-year"><i class="icon-calendar"></i> {{ post.date | date: '%Y' }}</h2>
+            <hr />
+          {% endif %}
+        {% endunless %}
+        <article itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost" class="calendar-entry">
+          <div class="calendar-badge">
+            <span class="calendar-month">{{ post.date | date: "%b" }}</span>
+            <span class="calendar-day">{{ post.date | date: "%d" }}</span>
+          </div>
+          <div class="calendar-details">
+            <h3 itemprop="headline">
+              <a href="{{ post.url | relative_url }}" rel="bookmark" title="{{ post.title }}">{{ post.title }}</a>
+            </h3>
+            <p itemprop="text">
+              {% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html | strip_newlines | truncate: 150 }}{% endif %}
+            </p>
+          </div>
+        </article>
+      {% endfor %}
+    </div><!-- /.calendar-posts-wrap -->
+  </div><!-- /#index -->
+</div><!-- /#main -->
+
+</div><!-- /.page-wrapper -->
+
+<div class="footer-wrap">
+  <footer>
+    {% include footer.html %}
+  </footer>
+</div>
+
+{% include scripts.html %}
+</body>
+</html>

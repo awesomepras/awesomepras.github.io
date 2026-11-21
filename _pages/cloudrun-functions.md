@@ -1,7 +1,7 @@
 ---
 layout: page
-title: ""
 permalink: /cloudrun-functions/
+title: "Cloud Run & Functions"
 ---
 
 ---
