@@ -34,7 +34,7 @@
   <div id="index" itemscope itemtype="http://schema.org/Blog">
     {% if content and content != "" %}
       <div class="article-wrap" itemprop="text" style="margin-bottom: 2em;">
-        {{ content }}
+        {{ content | markdownify }}
       </div>
     {% endif %}
 
